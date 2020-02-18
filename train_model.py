@@ -32,25 +32,8 @@ dqn.compile(Adam(lr=1e-3), metrics=['mae'])
 dqn.fit(env, 
   nb_steps=5000,
   visualize=False)
-res = dqn.test(env, nb_episodes=100, visualize=True)
-print(res)
+history = dqn.test(env, nb_episodes=100, visualize=True)
+print(history)
 
-# from stable_baselines import PPO2
-# from stable_baselines.common.policies import MlpPolicy
-
-# model = PPO2(MlpPolicy, 'TicTacToe-v0', verbose=1).learn(1000)
-
-# print(dqn.__dir__())
-
-# episodes = 10
-# for i in range(episodes):
-#   print('\n\nEpisode {}/{}'.format(i + 1, episodes))
-#   print(15 * '-')
-
-#   s = env.reset()
-#   while True:
-#     observation, reward, done, info = env.step()
-#     env.render()
-#     if done:
-#       break
-
+joblib.dump(model, 'model.bin')
+print('Saved model to disk...')
