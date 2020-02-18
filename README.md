@@ -13,3 +13,5 @@ To install the dependencies run `pip install -r requirements.txt`
 ## Usage 
 + To train the model, run `python train_model.py`
 + To play against the pretrained model, run `python play_with_model.py`
+
+An jupyter notebook outlining the processes that I took can be found [here](./tac_tac_toe.ipynb)
