@@ -11,7 +11,7 @@ env = gym.make('TicTacToe-v0')
 env.set_game_type('learner_vs_player')
 # env.set_game_type('learner_vs_computer')
 
-model = joblib.load('model.bin')
+model = joblib.load('model_pretrained.bin')
 
 memory = SequentialMemory(limit=50000, window_length=1)
 policy = LinearAnnealedPolicy(EpsGreedyQPolicy(), attr='eps', value_max=1.0, value_min=-1.0, value_test=.05, nb_steps=1000)
